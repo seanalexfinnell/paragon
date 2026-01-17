@@ -1,0 +1,507 @@
+---
+import ParagonIcon from "../assets/paragonicon.svg?url";
+import ChevronDown from "../assets/chevron-down.svg?raw";
+import SearchIcon from "../assets/search.svg?raw";
+import MedicalFeatureImage from "../../images/medicalnavfeature.jpg?url";
+import SportFeatureImage from "../../images/sportnavfeature.jpg?url";
+
+const homeMenuColumns = [
+	{
+		title: "",
+		items: [
+			{ label: "Innovation for Life", href: "#" },
+			{ label: "About Paragon", href: "#" },
+			{ label: "Management & Advisory", href: "#" },
+			{ label: "Milestones in Our Development", href: "#" },
+			{ label: "Testing & Services Menu", href: "#" },
+			{ label: "Community Initiative", href: "#", dividerBefore: true },
+			{
+				label: "Contact Paragon",
+				href: "#",
+				dividerBefore: true,
+				className: "text-[color:var(--paragon-green)]"
+			}
+		]
+	}
+];
+
+const medicalMenuColumns = [
+	{
+		title: "About",
+		items: [
+			{ label: "About ParagonMedical", href: "#" },
+			{ label: "Medical Case Studies", href: "#" },
+			{ label: "Health Crisis Management", href: "#" },
+			{ label: "Targeted Nutritional Intervention", href: "#" },
+			{ label: "Patient Rehabilitation", href: "#" },
+			{ label: "Testimonials", href: "#" }
+		]
+	},
+	{
+		title: "Metabolic Testing & Analysis",
+		items: [
+			{ label: "About & How it Works", href: "#" },
+			{ label: "Biomarkers Used in Testing", href: "#" },
+			{ label: "For Serious Medical Conditions", href: "#", dividerBefore: true },
+			{ label: "For Executive Health & Prevention", href: "#" },
+			{ label: "For Clinical Research & Trials", href: "#" },
+			{ label: "For Athletic Performance", href: "#" },
+			{ label: "Testing & Services Menu", href: "#", dividerBefore: true }
+		]
+	},
+	{
+		title: "Research & Papers",
+		items: [
+			{ label: "Biochemical & Metabolic Research", href: "#" },
+			{ label: "You & Your Genetics Are What You Eat", href: "#" },
+			{ label: "Reversing Metabolic Irregularities", href: "#" },
+			{ label: "Research Partners & Affiliates", href: "#" }
+		]
+	}
+];
+
+const sportMenuColumns = [
+	{
+		title: "About",
+		items: [
+			{ label: "About ParagonSport", href: "#" },
+			{ label: "Pro & Olympic Athletes", href: "#" },
+			{ label: "You Can Be a Top Athlete", href: "#" },
+			{ label: "Why Paragon Athletes Succeed", href: "#" },
+			{
+				label: "Training",
+				dividerBefore: true,
+				isHeading: true,
+				className: "text-sm font-semibold uppercase tracking-wide"
+			},
+			{ label: "Paragon Training Principles", href: "#" },
+			{ label: "MSR Training & Equipment", href: "#" },
+			{ label: "Research on Nutrition & MSR Training", href: "#" }
+		]
+	},
+	{
+		title: "Nutrition, Testing, and Services",
+		items: [
+			{ label: "Metabolic Testing & Analysis", href: "#" },
+			{ label: "Basic Testing & Analysis", href: "#" },
+			{ label: "Comprehensive Testing & Analysis", href: "#" },
+			{ label: "Year-round Monitoring", href: "#" },
+			{ label: "Targeted Sport Nutrition", href: "#" },
+			{ label: "Injury Rehab", href: "#" },
+			{ label: "Testing & Services Menu", href: "#" }
+		]
+	},
+	{
+		title: "RD&D and Engineering",
+		items: [
+			{ label: "Sport Manufacturing Clients", href: "#" },
+			{ label: "Sprint Shoes", href: "#" },
+			{ label: "Skates", href: "#" },
+			{ label: "Speed Training Apparel", href: "#" },
+			{ label: "Bobsled Equipment", href: "#" },
+			{ label: "Sport Training Facilities", href: "#" }
+		]
+	}
+];
+
+const powerMenuColumns = [
+	{
+		title: "ParagonPower",
+		items: [
+			{ label: "Our Mission", href: "#" },
+			{ label: "Management & Advisory", href: "#" },
+			{ label: "Customized Solutions", href: "#" },
+			{ label: "Strategic Partners", href: "#" },
+			{ label: "Financing", href: "#" },
+			{ label: "Consulting", href: "#" }
+		]
+	},
+	{
+		title: "Energy R&D",
+		items: [
+			{ label: "Theoretical Physics & Chemistry", href: "#" },
+			{ label: "Next Gen Power Technologies", href: "#" },
+			{ label: "Emerging Energy Technologies", href: "#" },
+			{ label: "Smart Grid Technology", href: "#" },
+			{ label: "Government & Regulatory", href: "#" },
+			{ label: "Green Initiatives", href: "#" },
+			{ label: "Environment, Health & Liability", href: "#" }
+		]
+	}
+];
+
+const climateMenuColumns = [
+	{
+		title: "The Climate Project",
+		items: [
+			{ label: "Summary", href: "#" },
+			{ label: "The New Climate Science", href: "#" },
+			{ label: "Disruptive Innovation", href: "#" },
+			{ label: "Viable Climate Solutions", href: "#" },
+			{ label: "Cost Effective Technology", href: "#" },
+			{ label: "Market Driven Fiscal Policy", href: "#" },
+			{ label: "Informing Government & Business", href: "#" },
+			{ label: "Going Green Profitably", href: "#" }
+		]
+	}
+];
+
+const navLinks = [
+	{
+		label: "ParagonSciences",
+		href: "/",
+		current: true,
+		alwaysGreen: true,
+		menuColumns: homeMenuColumns
+	},
+	{
+		label: "Medical",
+		href: "#",
+		current: false,
+		menuColumns: medicalMenuColumns,
+		feature: {
+			image: MedicalFeatureImage,
+			alt: "Bart Sambrook and Paragon Sciences medical highlight",
+			caption:
+				"For years, Bart Sambrook suffered from nerve-racking heart arrhythmia. Paragon's diagnosis & nutritional Intervention quickly solved the problem, and two years later he played in the Men's Doubles 40+ World Squash Final. Bart was recently crowned 2024 US National 60's Doubles Squash Champion.",
+			href: "#"
+		}
+	},
+	{
+		label: "Sport",
+		href: "#",
+		current: false,
+		menuColumns: sportMenuColumns,
+		feature: {
+			image: SportFeatureImage,
+			alt: "Steve Hall and Paragon Sciences sport highlight",
+			caption:
+				"Steve Hall helped found Paragon. His son Taylor (NHL #1 draft pick, 5-time All-Star, and 2018 league MVP) first used Paragon MSR training equipment at 9 years old, as well as our metabolic & nutrition testing when he was 14.",
+			href: "#"
+		}
+	},
+	{
+		label: "Power",
+		href: "#",
+		current: false,
+		menuColumns: powerMenuColumns
+	},
+	{
+		label: "Climate",
+		href: "#",
+		current: false,
+		menuColumns: climateMenuColumns
+	}
+];
+---
+
+<header class="w-full">
+	<div class="mx-auto w-full max-w-screen-xl px-6">
+		<input
+			type="checkbox"
+			id="mobile-nav-toggle"
+			class="peer sr-only md:hidden"
+		/>
+		<div class="flex items-center justify-between py-4">
+			<a href="/" class="inline-flex items-center">
+				<img
+					src={ParagonIcon}
+					alt="Paragon Sciences"
+					width="70"
+					height="80"
+					class="h-20 w-auto"
+					loading="eager"
+				/>
+			</a>
+			<div class="flex items-center gap-4">
+				<button
+					type="button"
+					aria-label="Search"
+					class="text-[color:var(--paragon-black)] transition-colors hover:text-[color:var(--paragon-green)]"
+				>
+					<span
+						aria-hidden="true"
+						class="inline-flex h-5 w-5"
+						set:html={SearchIcon}
+					/>
+				</button>
+				<label
+					for="mobile-nav-toggle"
+					class="cursor-pointer text-[color:var(--paragon-black)] md:hidden"
+				>
+					<span class="sr-only">Toggle navigation</span>
+					<span class="block h-6 w-6 peer-checked:hidden" aria-hidden="true">
+						<svg
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="h-6 w-6"
+						>
+							<line x1="3" y1="6" x2="21" y2="6" />
+							<line x1="3" y1="12" x2="21" y2="12" />
+							<line x1="3" y1="18" x2="21" y2="18" />
+						</svg>
+					</span>
+					<span class="hidden h-6 w-6 peer-checked:block" aria-hidden="true">
+						<svg
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="h-6 w-6"
+						>
+							<line x1="18" y1="6" x2="6" y2="18" />
+							<line x1="6" y1="6" x2="18" y2="18" />
+						</svg>
+					</span>
+				</label>
+			</div>
+		</div>
+		<nav aria-label="Primary" class="relative hidden md:block">
+			<ul class="flex items-center">
+				{navLinks.map((link) => (
+					<li class="group mr-[25px] last:mr-0">
+						<a
+							href={link.href}
+							aria-current={link.current ? "page" : undefined}
+							class={`inline-flex items-center gap-2 text-[color:var(--paragon-black)] font-semibold transition-colors hover:text-[color:var(--paragon-green)] ${
+								link.current || link.alwaysGreen
+									? "text-[color:var(--paragon-green)]"
+									: ""
+							}`}
+						>
+							<span>{link.label}</span>
+							<span
+								aria-hidden="true"
+								class="inline-flex h-3 w-3"
+								set:html={ChevronDown}
+							/>
+						</a>
+						<div class="invisible absolute left-1/2 top-full z-20 w-screen -translate-x-1/2 opacity-0 transition-all duration-300 ease-out group-hover:visible group-hover:opacity-100 group-hover:translate-y-2">
+							<div class="bg-white pb-8 pt-8">
+								<div class="mx-auto w-full max-w-screen-xl px-6">
+									<div class="grid gap-10 md:grid-cols-4">
+										{link.menuColumns.map((column) => (
+											<div>
+												{column.title ? (
+													<h3 class="text-sm font-semibold uppercase tracking-wide text-[color:var(--paragon-black)]">
+														{column.title}
+													</h3>
+												) : null}
+												<ul
+													class={`text-[color:var(--paragon-black)] md:text-sm ${
+														column.title ? "mt-4" : ""
+													}`}
+												>
+													{column.items.map((item) => (
+														<li
+															class={`${
+																item.dividerBefore ? "mt-6 pt-1" : "mt-2"
+															} ${item.className ?? ""}`}
+														>
+															{item.isHeading ? (
+																<span
+																	class={`text-[color:var(--paragon-black)] mb-2 inline-block ${
+																		item.className ?? ""
+																	}`}
+																>
+																	{item.label}
+																</span>
+															) : (
+																<a
+																	href={item.href}
+																	class={`transition-colors hover:text-[color:var(--paragon-green)] ${
+																		item.className ?? ""
+																	}`}
+																>
+																	{item.label}
+																</a>
+															)}
+														</li>
+													))}
+												</ul>
+											</div>
+										))}
+										{link.feature ? (
+											<a href={link.feature.href} class="block">
+												<figure class="relative aspect-square overflow-hidden rounded-lg">
+													<img
+														src={link.feature.image}
+														alt={link.feature.alt}
+														class="h-full w-full object-cover"
+														loading="lazy"
+													/>
+													<figcaption class="absolute inset-x-0 bottom-0 bg-black/60 p-4 text-xs leading-snug text-white">
+														{link.feature.caption}
+													</figcaption>
+												</figure>
+											</a>
+										) : null}
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				))}
+			</ul>
+		</nav>
+		<div class="hidden pb-6 peer-checked:block md:hidden">
+			<ul class="space-y-4">
+				{navLinks.map((link) => (
+					<li>
+						<details class="group mobile-nav-group">
+							<summary
+								class={`mobile-nav-summary flex cursor-pointer items-center justify-between text-[color:var(--paragon-black)] ${
+									link.current || link.alwaysGreen
+										? "text-[color:var(--paragon-green)]"
+										: ""
+								}`}
+							>
+								<span class="text-base font-semibold">{link.label}</span>
+								<span
+									aria-hidden="true"
+									class="inline-flex h-3 w-3 transition-transform group-open:rotate-180"
+									set:html={ChevronDown}
+								/>
+							</summary>
+							<div class="mobile-menu-panel">
+								<div class="mobile-menu-panel-inner space-y-6 pt-4">
+									{link.menuColumns.map((column) => (
+										<div>
+											{column.title ? (
+												<h3 class="text-sm font-semibold uppercase tracking-wide text-[color:var(--paragon-black)]">
+													{column.title}
+												</h3>
+											) : null}
+											<ul
+												class={`text-[color:var(--paragon-black)] ${
+													column.title ? "mt-3" : ""
+												}`}
+											>
+												{column.items.map((item) => (
+													<li
+														class={`${
+															item.dividerBefore ? "mt-5 pt-1" : "mt-2"
+														} ${item.className ?? ""}`}
+													>
+														{item.isHeading ? (
+															<span
+																class={`text-[color:var(--paragon-black)] mb-2 inline-block ${
+																	item.className ?? ""
+																}`}
+															>
+																{item.label}
+															</span>
+														) : (
+															<a
+																href={item.href}
+																class={`transition-colors hover:text-[color:var(--paragon-green)] ${
+																	item.className ?? ""
+																}`}
+															>
+																{item.label}
+															</a>
+														)}
+													</li>
+												))}
+											</ul>
+										</div>
+									))}
+								</div>
+							</div>
+						</details>
+					</li>
+				))}
+			</ul>
+		</div>
+	</div>
+	<style>
+		.mobile-menu-panel {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 300ms ease;
+		}
+
+		details.is-open > .mobile-nav-summary {
+			color: var(--paragon-green);
+		}
+	</style>
+	<script>
+		const mobileToggle = document.getElementById("mobile-nav-toggle");
+		const mq = window.matchMedia("(min-width: 768px)");
+		const mobileDetails = Array.from(
+			document.querySelectorAll("details.mobile-nav-group")
+		);
+
+		const syncToggle = () => {
+			if (mq.matches && mobileToggle instanceof HTMLInputElement) {
+				mobileToggle.checked = false;
+			}
+		};
+
+		const closeDetails = (detail) => {
+			const panel = detail.querySelector(".mobile-menu-panel");
+			detail.classList.remove("is-open");
+			if (panel) {
+				panel.style.maxHeight = `${panel.scrollHeight}px`;
+				requestAnimationFrame(() => {
+					panel.style.maxHeight = "0px";
+				});
+				const handleEnd = () => {
+					panel.removeEventListener("transitionend", handleEnd);
+					detail.open = false;
+				};
+				panel.addEventListener("transitionend", handleEnd);
+			} else {
+				detail.open = false;
+			}
+		};
+
+		const openDetails = (detail) => {
+			const panel = detail.querySelector(".mobile-menu-panel");
+			detail.open = true;
+			detail.classList.add("is-open");
+			if (panel) {
+				panel.style.maxHeight = `${panel.scrollHeight}px`;
+			}
+		};
+
+		const syncPanelHeights = () => {
+			mobileDetails.forEach((detail) => {
+				const panel = detail.querySelector(".mobile-menu-panel");
+				if (!panel) return;
+				if (detail.open) {
+					panel.style.maxHeight = `${panel.scrollHeight}px`;
+				} else {
+					panel.style.maxHeight = "0px";
+				}
+			});
+		};
+
+		mobileDetails.forEach((detail) => {
+			const summary = detail.querySelector(".mobile-nav-summary");
+			if (!summary) return;
+			summary.addEventListener("click", (event) => {
+				event.preventDefault();
+				if (detail.open) {
+					closeDetails(detail);
+					return;
+				}
+				mobileDetails.forEach((other) => {
+					if (other !== detail && other.open) closeDetails(other);
+				});
+				openDetails(detail);
+			});
+		});
+
+		window.addEventListener("resize", syncPanelHeights);
+		syncToggle();
+		syncPanelHeights();
+		mq.addEventListener("change", syncToggle);
+	</script>
+</header>

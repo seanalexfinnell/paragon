@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+:root {
+	--paragon-green: #59A847;
+	--paragon-black: #404040;
+}

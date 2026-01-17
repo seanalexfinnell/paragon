@@ -1,0 +1,81 @@
+components:
+  hero:
+    label: Hero
+    type: object
+    fields:
+      - name: src
+        label: Image
+        type: image
+      - name: alt
+        label: Alt text
+        type: string
+      - name: layout
+        label: Layout
+        type: select
+        options:
+          - label: Thumbnail (right column)
+            value: thumbnail
+          - label: Full width
+            value: full
+        default: thumbnail
+  source:
+    label: Source
+    type: object
+    fields:
+      - name: label
+        label: Label
+        type: string
+        required: true
+      - name: url
+        label: URL
+        type: string
+
+content:
+  - name: pages
+    label: Pages
+    path: src/content/pages
+    type: collection
+    format: yaml-frontmatter
+    view:
+      fields: [title, variant]
+      primary: title
+      sort: [title]
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+      - name: slug
+        label: Slug
+        type: string
+        description: Optional override for the file-based slug.
+      - name: variant
+        label: Layout variant
+        type: select
+        options:
+          - label: Variation One (bullets + thumbnail)
+            value: bullets
+          - label: Variation Two (toc + thumbnail)
+            value: toc
+          - label: Variation Three (simple + full hero)
+            value: simple
+        default: simple
+      - name: hero
+        label: Hero
+        component: hero
+      - name: bullets
+        label: Bullets
+        type: string
+        list: true
+        description: Used for variation one (bullet box).
+      - name: sources
+        label: Sources
+        component: source
+        list: true
+        description: Optional references shown at the bottom.
+      - name: body
+        label: Body
+        type: rich-text
