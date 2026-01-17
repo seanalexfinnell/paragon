@@ -1,3 +1,7 @@
+media:
+  input: public/media
+  output: /media
+
 components:
   hero:
     label: Hero
