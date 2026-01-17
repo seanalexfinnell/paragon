@@ -13,10 +13,11 @@ components:
         label: Layout
         type: select
         options:
-          - label: Thumbnail (right column)
-            value: thumbnail
-          - label: Full width
-            value: full
+          values:
+            - label: Thumbnail (right column)
+              value: thumbnail
+            - label: Full width
+              value: full
         default: thumbnail
   source:
     label: Source
@@ -56,12 +57,13 @@ content:
         label: Layout variant
         type: select
         options:
-          - label: Variation One (bullets + thumbnail)
-            value: bullets
-          - label: Variation Two (toc + thumbnail)
-            value: toc
-          - label: Variation Three (simple + full hero)
-            value: simple
+          values:
+            - label: Variation One (bullets + thumbnail)
+              value: bullets
+            - label: Variation Two (toc + thumbnail)
+              value: toc
+            - label: Variation Three (simple + full hero)
+              value: simple
         default: simple
       - name: hero
         label: Hero
