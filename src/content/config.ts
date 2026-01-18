@@ -9,7 +9,7 @@ const pages = defineCollection({
 		variant: z.enum(["bullets", "toc", "simple"]).default("simple"),
 		hero: z
 			.object({
-				src: z.string(),
+				src: z.string().optional(),
 				alt: z.string().optional(),
 				layout: z.enum(["thumbnail", "full"]).default("thumbnail"),
 			})
@@ -26,4 +26,12 @@ const pages = defineCollection({
 	}),
 });
 
-export const collections = { pages };
+const caseStudies = defineCollection({
+	type: "content",
+	schema: z.object({
+		title: z.string(),
+		slug: z.string().optional(),
+	}),
+});
+
+export const collections = { pages, "case-studies": caseStudies };

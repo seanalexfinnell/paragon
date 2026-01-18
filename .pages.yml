@@ -45,6 +45,10 @@ content:
       fields: [title, variant]
       primary: title
       sort: [title]
+      layout: tree
+      node:
+        filename: index.md
+        hideDirs: others
     fields:
       - name: title
         label: Title
@@ -82,6 +86,27 @@ content:
         component: source
         list: true
         description: Optional references shown at the bottom.
+      - name: body
+        label: Body
+        type: rich-text
+  - name: case-studies
+    label: Case Studies
+    path: src/content/case-studies
+    type: collection
+    format: yaml-frontmatter
+    view:
+      fields: [title]
+      primary: title
+      sort: [title]
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: slug
+        label: Slug
+        type: string
+        description: Optional override for the file-based slug.
       - name: body
         label: Body
         type: rich-text

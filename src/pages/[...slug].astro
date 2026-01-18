@@ -1,24 +1,50 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getCollection, getEntry, render } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
 	const pages = await getCollection("pages");
 
 	return pages.map((page) => {
-		const slug = page.data.slug ?? page.slug;
+		const rawSlug = page.data.slug ?? page.slug;
+		const trimmed = rawSlug.replace(/^\/+|\/+$/g, "");
+		const slug =
+			trimmed === "index"
+				? ""
+				: trimmed.endsWith("/index")
+					? trimmed.slice(0, -"/index".length)
+					: trimmed;
 		return {
-			params: { slug: slug.split("/") },
-			props: { id: page.id },
+			params: { slug: slug === "" ? undefined : slug },
 		};
 	});
 }
 
-const { id } = Astro.props;
-const entry = await getEntry("pages", id);
+const requestedRawSlug = Astro.params.slug ?? "";
+const requestedTrimmed = requestedRawSlug.replace(/^\/+|\/+$/g, "");
+const requestedSlug =
+	requestedTrimmed === "index"
+		? ""
+		: requestedTrimmed.endsWith("/index")
+			? requestedTrimmed.slice(0, -"/index".length)
+			: requestedTrimmed;
+const pages = await getCollection("pages");
+const entry = pages.find(
+	(page) => {
+		const entryRawSlug = page.data.slug ?? page.slug;
+		const entryTrimmed = entryRawSlug.replace(/^\/+|\/+$/g, "");
+		const entrySlug =
+			entryTrimmed === "index"
+				? ""
+				: entryTrimmed.endsWith("/index")
+					? entryTrimmed.slice(0, -"/index".length)
+					: entryTrimmed;
+		return entrySlug === requestedSlug;
+	}
+);
 
 if (!entry) {
-	throw new Error(`Page entry not found: ${id}`);
+	throw new Error(`Page entry not found: ${requestedSlug || "index"}`);
 }
 
 const { Content, headings } = await render(entry);
@@ -30,7 +56,7 @@ const showBullets = entry.data.variant === "bullets" && entry.data.bullets?.leng
 
 <BaseLayout title={entry.data.title}>
 	<div class="space-y-12">
-		{hero?.layout === "full" && (
+{hero?.layout === "full" && hero.src && (
 			<img
 				src={hero.src}
 				alt={hero.alt ?? ""}
@@ -74,7 +100,7 @@ const showBullets = entry.data.variant === "bullets" && entry.data.bullets?.leng
 				)}
 			</div>
 
-			{hero?.layout === "thumbnail" && (
+{hero?.layout === "thumbnail" && hero.src && (
 				<div class="w-full">
 					<img
 						src={hero.src}
