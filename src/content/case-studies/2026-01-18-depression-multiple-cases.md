@@ -1,7 +1,7 @@
 ---
 title: "Depression: multiple cases"
 ---
-# **Typical Patient History:**
+## **Typical Patient History:**
 
 There are several common scenarios that produce depression in patients today, all of which are ultimately preventable and treatable through targeted therapeutic nutrition.  This requires determining a proper balance of fatty acids, amino acids, minerals, and vitamins which are all required to ensure a properly functioning and stable neuro-biochemistry.   
 
@@ -19,7 +19,6 @@ The most common cause of mild to severe depression Paragon now sees is the resul
     
 3.  too high in carbohydrates and refined carbohydrates.
     
-
 Regardless of whether one is vegan, vegetarian, or eating meat, a lack of balanced protein intake affects neurotransmitter synthesis and function necessary for stable mental function.
 
 Also very common, a deficiency of omega 3 fatty acids can cause depression, as additional sunlight required for full energy and mental health is stored in the multiple double-bonds of omega 3 fatty acids.  These fatty-acids are required for any person working in any environment and/or living at any latitude with limited year round exposure to adequate sunlight.  They are critical to enhancing oxygen transport & utilization within the body and are necessary to generate higher levels of energy required to meet the challenges faced in life.  Scientists at the National Institutes of Health associated the increase in depression in North America during the last century with the decline in consumption of DHA (docosahexaenoic acid) during the same period.  Although many stresses of modern life contribute to the prevalence of depression, Joseph R. Hibbeln, M.D., and Norman Salem, Jr., Ph.D., concluded in 1995 that the "relative deficiencies in essential fatty acids may also intensify vulnerability to depression."  They also pointed to lower rates of major depression in societies that consume large amounts of fish, a key dietary source of DHA.  North American and European populations showed cumulative rates of depression 10 times greater than a Taiwanese population that consumed a lot of fish.  The Japanese, whose diet is rich in fish, have a significantly lower prevalence of depression compared to North America and Europe.[^1] Belgium researchers at Antwerp's University Hospital found that seriously depressed patients had lower omega-3 fatty acid levels than mildly depressed patients.[^2]
@@ -60,6 +59,6 @@ In most cases an immediate improvement is seen in the patient.  More difficult 
 
 [^2]: Journal of Affective Disorders 1996;38:35-46
 
-[^3]: Robbins, J.  _Diet For A New America_, Wallpole, N.H., Stillpoint Publishing, 1987
+[^3]: Robbins, J. _Diet For A New America_, Wallpole, N.H., Stillpoint Publishing, 1987
 
 [^4]: Ibid
