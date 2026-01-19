@@ -109,6 +109,4 @@ content:
         description: Optional override for the file-based slug.
       - name: body
         label: Body
-        type: code
-        options:
-          language: markdown
+        type: rich-text
