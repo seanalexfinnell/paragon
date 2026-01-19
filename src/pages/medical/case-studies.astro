@@ -24,6 +24,7 @@ const studies = await Promise.all(
 		};
 	})
 );
+const orderedStudies = studies.map((study, index) => ({ ...study, index }));
 ---
 
 <BaseLayout title="Medical Case Studies">
@@ -71,15 +72,16 @@ const studies = await Promise.all(
 		</aside>
 	</section>
 
-	{studies.map((study) => (
+	{orderedStudies.map((study) => (
 		<dialog
 			id={study.modalId}
-			class="w-[min(92vw,960px)] rounded-xl border-0 p-0 shadow-2xl"
+			class="w-[min(92vw,960px)] overflow-hidden rounded-xl border-0 p-0 shadow-2xl"
+			data-index={study.index}
 		>
-			<div class="rounded-xl bg-white">
-				<header class="relative bg-[color:var(--paragon-green)] px-8 py-6 text-white">
+			<div class="flex max-h-[90vh] flex-col rounded-xl bg-white">
+				<header class="relative rounded-t-xl bg-[color:var(--paragon-green)] px-8 py-6 text-white">
 					<p class="text-xs uppercase tracking-wide text-white/80">Medical Case Study</p>
-					<h2 class="mt-2 text-3xl font-light">{study.title}</h2>
+					<h2 class="mt-2 text-4xl font-light">{study.title}</h2>
 					<button
 						type="button"
 						class="absolute right-4 top-4 text-2xl text-white/80 hover:text-white"
@@ -88,42 +90,109 @@ const studies = await Promise.all(
 						×
 					</button>
 				</header>
-				<div class="space-y-6 px-8 py-6 text-base leading-7 text-neutral-800">
+				<div class="modal-body space-y-6 overflow-y-auto px-8 py-6 text-base leading-7 text-neutral-800">
 					<study.Content />
 				</div>
 			</div>
+			<button
+				type="button"
+				class="absolute -left-10 top-1/2 -translate-y-1/2 p-2 text-3xl text-white/80 hover:text-white"
+				data-nav="prev"
+				aria-label="Previous case study"
+			>
+				&#8249;
+			</button>
+			<button
+				type="button"
+				class="absolute -right-10 top-1/2 -translate-y-1/2 p-2 text-3xl text-white/80 hover:text-white"
+				data-nav="next"
+				aria-label="Next case study"
+			>
+				&#8250;
+			</button>
 		</dialog>
 	))}
 
 	<style>
+		dialog {
+			inset: 0;
+			margin: auto;
+			overflow: visible;
+		}
+
+		:global(.modal-body h2) {
+			font-size: 1.5rem;
+			line-height: 2rem;
+		}
+
 		dialog::backdrop {
 			background: rgba(25, 25, 25, 0.6);
 		}
 	</style>
 
 	<script>
-		const dialogButtons = document.querySelectorAll("[data-dialog]");
-		dialogButtons.forEach((button) => {
+		const dialogs = Array.from(document.querySelectorAll("dialog"));
+		let activeIndex = -1;
+		let activeDialog = null;
+		const openDialog = (index) => {
+			const normalizedIndex = (index + dialogs.length) % dialogs.length;
+			const target = dialogs[normalizedIndex];
+			if (!target) return;
+			activeDialog = target;
+			dialogs.forEach((dialog) => dialog.close());
+			target.showModal();
+			activeIndex = normalizedIndex;
+		};
+
+		document.querySelectorAll("[data-dialog]").forEach((button) => {
 			const dialogId = button.getAttribute("data-dialog");
-			if (!dialogId) return;
-			const dialog = document.getElementById(dialogId);
+			const dialog = dialogId ? document.getElementById(dialogId) : null;
 			if (!dialog) return;
-			button.addEventListener("click", () => dialog.showModal());
+			button.addEventListener("click", () => {
+				const index = Number(dialog.dataset.index ?? 0);
+				openDialog(index);
+			});
 		});
 
-		const closeButtons = document.querySelectorAll("[data-close]");
-		closeButtons.forEach((button) => {
+		document.querySelectorAll("[data-close]").forEach((button) => {
 			const dialog = button.closest("dialog");
 			if (!dialog) return;
 			button.addEventListener("click", () => dialog.close());
 		});
 
-		document.querySelectorAll("dialog").forEach((dialog) => {
+		document.querySelectorAll("[data-nav]").forEach((button) => {
+			button.addEventListener("click", () => {
+				if (activeIndex === -1) return;
+				const direction = button.getAttribute("data-nav");
+				const nextIndex = direction === "prev" ? activeIndex - 1 : activeIndex + 1;
+				openDialog(nextIndex);
+			});
+		});
+
+		dialogs.forEach((dialog) => {
 			dialog.addEventListener("click", (event) => {
 				if (event.target === dialog) {
 					dialog.close();
 				}
 			});
+			dialog.addEventListener("close", () => {
+				if (dialog === activeDialog) {
+					activeIndex = -1;
+					activeDialog = null;
+				}
+			});
+		});
+
+		window.addEventListener("keydown", (event) => {
+			if (activeIndex === -1) return;
+			if (event.key === "ArrowLeft") {
+				event.preventDefault();
+				openDialog(activeIndex - 1);
+			}
+			if (event.key === "ArrowRight") {
+				event.preventDefault();
+				openDialog(activeIndex + 1);
+			}
 		});
 	</script>
 </BaseLayout>

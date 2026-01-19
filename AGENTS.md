@@ -28,6 +28,9 @@ all changes.
   cta).
 - Avoid magic strings in components; pass content from frontmatter or data
   files.
+- For styling Markdown rendered via Astro content collections, use scoped CSS
+  with `:global(...)` selectors (e.g. `:global(.modal-body h2)`) because the
+  rendered content is outside component scoping.
 
 ## Astro Conventions
 
