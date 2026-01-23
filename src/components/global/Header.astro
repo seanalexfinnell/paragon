@@ -9,15 +9,15 @@ const homeMenuColumns = [
 	{
 		title: "",
 		items: [
-			{ label: "Innovation for Life", href: "#" },
-			{ label: "About Paragon", href: "#" },
-			{ label: "Management & Advisory", href: "#" },
-			{ label: "Milestones in Our Development", href: "#" },
-			{ label: "Testing & Services Menu", href: "#" },
-			{ label: "Community Initiative", href: "#", dividerBefore: true },
+			{ label: "Innovation for Life", href: "/" },
+			{ label: "About Paragon", href: "/about" },
+			{ label: "Management & Advisory", href: "/about/management" },
+			{ label: "Milestones in Our Development", href: "/about/milestones" },
+			{ label: "Testing & Services Menu", href: "/services" },
+			{ label: "Community Initiative", href: "/about/community-initiative", dividerBefore: true },
 			{
 				label: "Contact Paragon",
-				href: "#",
+				href: "/about/contact",
 				dividerBefore: true,
 				className: "text-[color:var(--paragon-green)]"
 			}
@@ -29,33 +29,33 @@ const medicalMenuColumns = [
 	{
 		title: "About",
 		items: [
-			{ label: "About ParagonMedical", href: "#" },
-			{ label: "Medical Case Studies", href: "#" },
-			{ label: "Health Crisis Management", href: "#" },
-			{ label: "Targeted Nutritional Intervention", href: "#" },
-			{ label: "Patient Rehabilitation", href: "#" },
-			{ label: "Testimonials", href: "#" }
+			{ label: "About ParagonMedical", href: "/medical" },
+			{ label: "Medical Case Studies", href: "/medical/case-studies" },
+			{ label: "Health Crisis Management", href: "/medical/treatment/health-crisis" },
+			{ label: "Targeted Nutritional Intervention", href: "/medical/treatment/nutritional-intervention" },
+			{ label: "Patient Rehabilitation", href: "/medical/treatment/patient-rehabilitation" },
+			{ label: "Testimonials", href: "/about/testimonials" }
 		]
 	},
 	{
 		title: "Metabolic Testing & Analysis",
 		items: [
-			{ label: "About & How it Works", href: "#" },
-			{ label: "Biomarkers Used in Testing", href: "#" },
-			{ label: "For Serious Medical Conditions", href: "#", dividerBefore: true },
-			{ label: "For Executive Health & Prevention", href: "#" },
-			{ label: "For Clinical Research & Trials", href: "#" },
-			{ label: "For Athletic Performance", href: "#" },
-			{ label: "Testing & Services Menu", href: "#", dividerBefore: true }
+			{ label: "About & How it Works", href: "/medical/treatment/metabolic-testing-analysis" },
+			{ label: "Biomarkers Used in Testing", href: "/medical/treatment/metabolic-testing-analysis/biomarkers" },
+			{ label: "For Serious Medical Conditions", href: "/medical/treatment/medical-conditions", dividerBefore: true },
+			{ label: "For Executive Health & Prevention", href: "/medical/performance" },
+			{ label: "For Clinical Research & Trials", href: "/medical/treatment/metabolic-testing-analysis/clinical-research" },
+			{ label: "For Athletic Performance", href: "/sport/metabolic" },
+			{ label: "Testing & Services Menu", href: "/services", dividerBefore: true }
 		]
 	},
 	{
 		title: "Research & Papers",
 		items: [
-			{ label: "Biochemical & Metabolic Research", href: "#" },
-			{ label: "You & Your Genetics Are What You Eat", href: "#" },
-			{ label: "Reversing Metabolic Irregularities", href: "#" },
-			{ label: "Research Partners & Affiliates", href: "#" }
+			{ label: "Biochemical & Metabolic Research", href: "/medical/biochemical-research" },
+			{ label: "You & Your Genetics Are What You Eat", href: "/medical/papers" },
+			{ label: "Reversing Metabolic Irregularities", href: "/medical/papers" },
+			{ label: "Research Partners & Affiliates", href: "/medical/research/partners" }
 		]
 	}
 ];
@@ -64,42 +64,54 @@ const sportMenuColumns = [
 	{
 		title: "About",
 		items: [
-			{ label: "About ParagonSport", href: "#" },
-			{ label: "Pro & Olympic Athletes", href: "#" },
-			{ label: "You Can Be a Top Athlete", href: "#" },
-			{ label: "Why Paragon Athletes Succeed", href: "#" },
+			{ label: "About ParagonSport", href: "/sport" },
+			{ label: "Pro & Olympic Athletes", href: "/sport/pro-olympic" },
+			{ label: "You Can Be a Top Athlete", href: "/sport/top-athlete" },
+			{ label: "Why Paragon Athletes Succeed", href: "/sport/success" },
 			{
 				label: "Training",
 				dividerBefore: true,
 				isHeading: true,
 				className: "text-sm font-semibold uppercase tracking-wide"
 			},
-			{ label: "Paragon Training Principles", href: "#" },
-			{ label: "MSR Training & Equipment", href: "#" },
-			{ label: "Research on Nutrition & MSR Training", href: "#" }
+			{ label: "Paragon Training Principles", href: "/sport/training/principles" },
+			{ label: "MSR Training & Equipment", href: "/sport/training/msr" },
+			{ label: "Research on Nutrition & MSR Training", href: "/sport/training/research" }
 		]
 	},
 	{
 		title: "Nutrition, Testing, and Services",
 		items: [
-			{ label: "Metabolic Testing & Analysis", href: "#" },
-			{ label: "Basic Testing & Analysis", href: "#" },
-			{ label: "Comprehensive Testing & Analysis", href: "#" },
-			{ label: "Year-round Monitoring", href: "#" },
-			{ label: "Targeted Sport Nutrition", href: "#" },
-			{ label: "Injury Rehab", href: "#" },
-			{ label: "Testing & Services Menu", href: "#" }
+			{ label: "Metabolic Testing & Analysis", href: "/sport/metabolic" },
+			{
+				label: "Basic Testing & Analysis",
+				href: "/sport/metabolic/basic-analysis",
+				indent: true
+			},
+			{
+				label: "Comprehensive Testing & Analysis",
+				href: "/sport/metabolic/comprehensive-testing",
+				indent: true
+			},
+			{
+				label: "Year-round Monitoring",
+				href: "/sport/metabolic/monitoring",
+				indent: true
+			},
+			{ label: "Targeted Sport Nutrition", href: "/sport/nutrition" },
+			{ label: "Injury Rehab", href: "/sport/rehab" },
+			{ label: "Testing & Services Menu", href: "/services" }
 		]
 	},
 	{
 		title: "RD&D and Engineering",
 		items: [
-			{ label: "Sport Manufacturing Clients", href: "#" },
-			{ label: "Sprint Shoes", href: "#" },
-			{ label: "Skates", href: "#" },
-			{ label: "Speed Training Apparel", href: "#" },
-			{ label: "Bobsled Equipment", href: "#" },
-			{ label: "Sport Training Facilities", href: "#" }
+			{ label: "Sport Manufacturing Clients", href: "/sport/manufacturing-clients" },
+			{ label: "Sprint Shoes", href: "/sport/training/sprint-shoes" },
+			{ label: "Skates", href: "/sport/training/skates" },
+			{ label: "Speed Training Apparel", href: "/sport/training/speed-training-apparel" },
+			{ label: "Bobsled Equipment", href: "/sport/training/bobsled" },
+			{ label: "Sport Training Facilities", href: "/sport/training/facilities" }
 		]
 	}
 ];
@@ -108,24 +120,32 @@ const powerMenuColumns = [
 	{
 		title: "ParagonPower",
 		items: [
-			{ label: "Our Mission", href: "#" },
-			{ label: "Management & Advisory", href: "#" },
-			{ label: "Customized Solutions", href: "#" },
-			{ label: "Strategic Partners", href: "#" },
-			{ label: "Financing", href: "#" },
-			{ label: "Consulting", href: "#" }
+			{ label: "Our Mission", href: "/power" },
+			{ label: "Management & Advisory", href: "/power/management-advisory" },
+			{ label: "Customized Solutions", href: "/power/solutions" },
+			{ label: "Strategic Partners", href: "/power/partnerships" },
+			{ label: "Financing", href: "/power/financing" },
+			{ label: "Consulting", href: "/power/consulting" }
 		]
 	},
 	{
 		title: "Energy R&D",
 		items: [
-			{ label: "Theoretical Physics & Chemistry", href: "#" },
-			{ label: "Next Gen Power Technologies", href: "#" },
-			{ label: "Emerging Energy Technologies", href: "#" },
-			{ label: "Smart Grid Technology", href: "#" },
-			{ label: "Government & Regulatory", href: "#" },
-			{ label: "Green Initiatives", href: "#" },
-			{ label: "Environment, Health & Liability", href: "#" }
+			{ label: "Theoretical Physics & Chemistry", href: "/power/research/physics" },
+			{ label: "Next Gen Power Technologies", href: "/power/research/next-gen-tech" },
+			{
+				label: "Emerging Energy Technologies",
+				href: "/power/research/next-gen-tech/emerging",
+				indent: true
+			},
+			{
+				label: "Smart Grid Technology",
+				href: "/power/research/next-gen-tech/smart-grid",
+				indent: true
+			},
+			{ label: "Government & Regulatory", href: "/power/research/government" },
+			{ label: "Green Initiatives", href: "/power/research/green-initiatives" },
+			{ label: "Environment, Health & Liability", href: "/power/research/environment-health-liability" }
 		]
 	}
 ];
@@ -134,14 +154,22 @@ const climateMenuColumns = [
 	{
 		title: "The Climate Project",
 		items: [
-			{ label: "Summary", href: "#" },
-			{ label: "The New Climate Science", href: "#" },
-			{ label: "Disruptive Innovation", href: "#" },
-			{ label: "Viable Climate Solutions", href: "#" },
-			{ label: "Cost Effective Technology", href: "#" },
-			{ label: "Market Driven Fiscal Policy", href: "#" },
-			{ label: "Informing Government & Business", href: "#" },
-			{ label: "Going Green Profitably", href: "#" }
+			{ label: "Summary", href: "/climate" },
+			{ label: "The New Climate Science", href: "/climate/new-science" },
+			{ label: "Disruptive Innovation", href: "/climate/disruptive-innovation" },
+			{ label: "Viable Climate Solutions", href: "/climate/viable-solutions" },
+			{
+				label: "Cost Effective Technology",
+				href: "/climate/viable-solutions/cost-effective-tech",
+				indent: true
+			},
+			{
+				label: "Market Driven Fiscal Policy",
+				href: "/climate/viable-solutions/market-driven-fiscal-policy",
+				indent: true
+			},
+			{ label: "Informing Government & Business", href: "/climate/informing-govt-business" },
+			{ label: "Going Green Profitably", href: "/climate/go-green-profitably" }
 		]
 	}
 ];
@@ -302,7 +330,7 @@ const navLinks = [
 														<li
 															class={`${
 																item.dividerBefore ? "mt-6 pt-1" : "mt-2"
-															} ${item.className ?? ""}`}
+															} ${item.indent ? "pl-4" : ""} ${item.className ?? ""}`}
 														>
 															{item.isHeading ? (
 																<span
@@ -387,7 +415,7 @@ const navLinks = [
 													<li
 														class={`${
 															item.dividerBefore ? "mt-5 pt-1" : "mt-2"
-														} ${item.className ?? ""}`}
+														} ${item.indent ? "pl-4" : ""} ${item.className ?? ""}`}
 													>
 														{item.isHeading ? (
 															<span
